@@ -5,8 +5,8 @@ urlpatterns = [
 
     path('get-otp/' , getOTP, name="getOTP" ),
     path('', verifyOTP,  name="verifyOTP"),
-    # path('register' , register , name="register"),
-    # path('otp' , otp , name="otp"),
+    path('pass/' , success , name="pass"),
+    path('fail/' , fail , name="fail"),
     # path('login-otp', login_otp , name="login_otp")     
     
 ]

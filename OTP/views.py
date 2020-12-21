@@ -2,8 +2,6 @@ from django.shortcuts import render , redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 
-from .models import Profile
-import random
 
 import http.client
 
@@ -20,6 +18,17 @@ def getOTP(request):
     return render(request, 'get_otp.html', {'ma':ma})
 
 def verifyOTP(request):
+    if request.method == 'POST':
+        otp = request.POST.get('otp')
+        code= str(caculate.makecode())
+        if otp == code:
+            return redirect('pass')
+        else:
+            return redirect('fail')
     return render(request,'verify_otp.html')
 
+def success(request):
+    return render(request,'pass.html')
 
+def fail(request):
+    return render(request,'fail.html')
