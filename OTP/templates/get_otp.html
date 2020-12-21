@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+<div class="container mt-5 pt-4">
+    
+    <div class="col-6 mx-auto">
+        <h3 class="text-center">OTP Generator</h3>
+        <form method="post">
+            <!-- {% csrf_token %} -->
+            <div class="row">
+                <div class="form-group col-12">
+                    <input type="text" placeholder="Mobile" class="form-control" name="mobile" id="" value="{{ma}}" >
+                    
+                </div>
+            </div>
+            <p> <a href="{% url 'verifyOTP' %}">Enter your OTP</a></p>
+            <!-- <button class="btn btn-primary">Submit</button> -->
+        </form>
+    </div>
+
+</div>
+
+
+{% endblock %}
